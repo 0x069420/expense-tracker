@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="d-flex">
+        <div class="bg-dark text-white p-3" style="width: 250px; height: 100vh;">
+          <img src="img/images.png" alt="" class="imagen">
+          <p>Profile Name</p>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-white active d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-house-door-fill me-2 svg" viewBox="0 0 16 16">
+                          <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.505a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5V7.207l-6-6L.5 7.207V14.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/>
+                        </svg>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cash me-2 svg" viewBox="0 0 16 16">
+                          <path d="M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                          <path d="M0 4a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V4zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V6a2 2 0 0 1-2-2H3z"/>
+                        </svg>
+                        Register
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-piggy-bank-fill me-2 svg" viewBox="0 0 16 16">
+                          <path d="M7.964 1.026A4.5 4.5 0 0 0 4.5 5.5v4.418l-2.5 2.49a.5.5 0 0 0 .707.708L4.5 11.317V14a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-2.683l1.793 1.792a.5.5 0 0 0 .707-.707L11.5 9.918V5.5a4.5 4.5 0 0 0-3.536-4.474zM2 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm11.5-1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0v-1a.5.5 0 0 1 .5-.5z"/>
+                        </svg>
+                        Movements
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white d-flex align-items-center" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-slash-circle-fill me-2 svg" viewBox="0 0 16 16">
+                          <path d="M11.979,10.596 C11.979,8.901 10.621,7.492 8.968,7.215 L8.968,3.828 C9.472,3.984 9.993,4.023 10.203,4.498 C10.393,4.926 10.874,5.109 11.275,4.908 C11.678,4.706 11.848,4.194 11.659,3.765 C11.186,2.699 10.117,2.271 8.983,2.077 L8.983,0 L8,0 L8,2.066 C6.336,2.317 5.005,3.736 5.005,5.449 C5.005,7.159 6.329,8.576 8,8.832 L8,12.242 C7.464,12.094 6.967,12.044 6.748,11.547 C6.56,11.117 6.08,10.934 5.68,11.135 C5.276,11.336 5.104,11.846 5.292,12.276 C5.773,13.366 6.846,13.807 8.016,13.987 L8.016,16 L8.954,16 L8.954,13.979 C10.6,13.707 11.979,12.294 11.979,10.596 L11.979,10.596 Z M6.617,5.449 C6.617,4.675 7.215,4.025 8.03,3.816 L8.03,7.085 C7.215,6.874 6.617,6.225 6.617,5.449 L6.617,5.449 Z M8.961,12.223 L8.961,8.969 C9.776,9.194 10.371,9.834 10.371,10.596 C10.371,11.358 9.776,11.998 8.961,12.223 L8.961,12.223 Z" class="si-glyph-fill"/>
+                        </svg>
+                        Savings
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="container-fluid p-3">
+          <div class="principal-container">
+            <div class="parent">
+              <div class="div1"> 
+                <h1>Tus gastos</h1>
+                <div class="chart-container">
+                <hr class="separator">
+                <canvas id="chart" width="1200" height="410"></canvas>
+                </div>
+              </div>
+              <div class="div2"> 
+                <h1>Ultimas acciones</h1>
+                <div class="table-responsive">
+                  <table class="table table-dark">
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Amount</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2023-10-15</td>
+                        <td>Grocery shopping</td>
+                        <td>Food</td>
+                        <td>$120.50</td>
+                      </tr>
+                      <tr>
+                        <td>2023-10-14</td>
+                        <td>Gas station</td>
+                        <td>Transportation</td>
+                        <td>$45.00</td>
+                      </tr>
+                      <tr>
+                        <td>2023-10-12</td>
+                        <td>Restaurant dinner</td>
+                        <td>Entertainment</td>
+                        <td>$78.25</td>
+                      </tr>
+                      <tr>
+                        <td>2023-10-10</td>
+                        <td>Monthly subscription</td>
+                        <td>Services</td>
+                        <td>$15.99</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="div3">
+                <h1>¿En que estoy gastando?</h1>
+                <hr class="separator">
+                <div class="chart-pie-container">
+                <canvas id="chart-pie" width="12" height="395"></canvas>
+              </div>
+              </div>
+              <div class="div4">
+                <h1>Resumen Financiero</h1>
+                <hr class="separator">
+                <div class="financial-summary">
+                  <!-- Gasto total y comparativa -->
+                  <div class="summary-section">
+                    <div class="section-header">
+                      <h3>Gasto total del mes</h3>
+                      <span class="amount">$1,245.80</span>
+                    </div>
+                    <div class="comparison up">
+                      <i class="bi bi-arrow-up-short"></i>
+                      <span>12.5% vs mes anterior ($1,130.20)</span>
+                    </div>
+                  </div>
+              
+                  <!-- Presupuesto restante -->
+                  <div class="summary-section">
+                    <div class="section-header">
+                      <h3>Presupuesto restante</h3>
+                      <span class="amount">$754.20</span>
+                    </div>
+                    <div class="progress-container">
+                      <div class="progress-bar"></div>
+                    </div>
+                    <div class="progress-text">62% del presupuesto mensual utilizado</div>
+                  </div>
+              
+                  <!-- Ahorros -->
+                  <div class="summary-section">
+                    <div class="savings-grid">
+                      <div class="savings-item">
+                        <div class="item-header">
+                          <i class="bi bi-wallet2"></i>
+                          <h3>Ahorros del mes</h3>
+                        </div>
+                        <div class="item-amount">
+                          $350.00
+                          <div class="badge-success">
+                            <i class="bi bi-graph-up"></i>
+                            <span>+15%</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="savings-item">
+                        <div class="item-header">
+                          <i class="bi bi-wallet2"></i>
+                          <h3>Ahorros totales</h3>
+                        </div>
+                        <div class="item-amount">$4,250.00</div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
