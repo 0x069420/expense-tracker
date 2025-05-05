@@ -1,4 +1,5 @@
 const ctx = document.getElementById('chart').getContext('2d');
+const gasto = document.getElementById('btn-gasto');
 const myChart = new Chart(ctx, {
   type: 'bar',
   data: {
@@ -43,3 +44,34 @@ new Chart(ptx, {
     }
   }
 });
+
+
+
+function mostrarPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
+
+function cerrarPopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+function enviarGasto() {
+  const valor = document.getElementById('valorGasto').value;
+  const tipo = document.getElementById('tipoGasto').value;
+
+  fetch('http://localhost:5000/a/api/gastos', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ valor, tipo })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+  cerrarPopup();
+}
+
