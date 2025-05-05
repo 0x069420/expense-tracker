@@ -33,7 +33,8 @@ app.post('/api/gastos', async (req, res) => {
   try {
     const nuevoGasto = new Gasto({
       valor,
-      tipo
+      tipo,
+      id
     });
 
     await nuevoGasto.save();  

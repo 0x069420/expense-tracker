@@ -13,6 +13,10 @@ const gastoSchema = new mongoose.Schema({
   fecha: {
     type: Date,
     default: Date.now
+  },
+  id: {
+    type: String,
+    required: true
   }
 });
 

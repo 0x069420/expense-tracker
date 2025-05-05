@@ -45,8 +45,6 @@ new Chart(ptx, {
   }
 });
 
-
-
 function mostrarPopup() {
   document.getElementById('popup').style.display = 'block';
 }
@@ -59,10 +57,10 @@ function enviarGasto() {
   const valor = document.getElementById('valorGasto').value;
   const tipo = document.getElementById('tipoGasto').value;
 
-  fetch('http://localhost:5000/a/api/gastos', {
+  fetch('http://localhost:5000/api/gastos', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ valor, tipo })
+    body: JSON.stringify({ valor, tipo, id })
   })
   .then(response => response.json())
   .then(data => {
