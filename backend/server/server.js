@@ -1,8 +1,14 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const Gasto = require('../esquema/gasto'); 
-require('dotenv').config();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import bcrypt from 'bcrypt';
+import { hashPassword } from '../middleware/bcrypt.js';
+import { getData } from '../../frontend/pages/register/register.js';
+import Gasto from '../esquema/gasto.js';
+import  Usuario  from '../esquema/usuario.js';
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -28,21 +34,37 @@ app.get('/api/check-db', async (req, res) => {
 });
 
 app.post('/api/gastos', async (req, res) => {
-  const { valor, tipo } = req.body;
+  const { valor, tipo} = req.body;
 
   try {
     const nuevoGasto = new Gasto({
       valor,
-      tipo,
-      id
+      tipo
     });
 
-    await nuevoGasto.save();  
+    await nuevoGasto.save(); 
     res.status(201).json({ message: 'Gasto guardado correctamente' });
   } catch (err) {
     res.status(500).json({ message: 'Error al guardar el gasto', error: err });
   }
 });
+
+app.post('/api/register', async (req, res) => {
+  const { hashedPassword } = await hashPassword();
+  const { name} = getData();
+
+  try {
+    const nuevoUsuario = new Usuario({
+      name,
+      hashedPassword
+    });
+    await nuevoUsuario.save();
+    res.status(201).json({message: 'Usuario registrado correctamente' });
+  } catch (err){
+    res.status(500).json({ message: 'Error al registrar usuario', error: err});
+  }
+})
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

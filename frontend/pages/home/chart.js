@@ -60,7 +60,7 @@ function enviarGasto() {
   fetch('http://localhost:5000/api/gastos', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ valor, tipo, id })
+    body: JSON.stringify({ valor, tipo})
   })
   .then(response => response.json())
   .then(data => {
