@@ -2,11 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
-import bcrypt from 'bcrypt';
 import { hashPassword } from '../middleware/bcrypt.js';
-import { getData } from '../../frontend/pages/register/register.js';
 import Gasto from '../esquema/gasto.js';
-import  Usuario  from '../esquema/usuario.js';
+import Usuario from '../esquema/usuario.js';
 
 dotenv.config();
 
@@ -34,12 +32,13 @@ app.get('/api/check-db', async (req, res) => {
 });
 
 app.post('/api/gastos', async (req, res) => {
-  const { valor, tipo} = req.body;
+  const { valor, tipo, id} = req.body;
 
   try {
     const nuevoGasto = new Gasto({
       valor,
-      tipo
+      tipo,
+      id
     });
 
     await nuevoGasto.save(); 
@@ -50,21 +49,25 @@ app.post('/api/gastos', async (req, res) => {
 });
 
 app.post('/api/register', async (req, res) => {
-  const { hashedPassword } = await hashPassword();
-  const { name} = getData();
+  console.log('BODY RECIBIDO:', req.body);
+  const { name, password, id } = req.body;
 
   try {
+    const hashedPassword = await hashPassword(password);
     const nuevoUsuario = new Usuario({
       name,
-      hashedPassword
+      hashedPassword,
+      id
     });
-    await nuevoUsuario.save();
-    res.status(201).json({message: 'Usuario registrado correctamente' });
-  } catch (err){
-    res.status(500).json({ message: 'Error al registrar usuario', error: err});
-  }
-})
 
+    await nuevoUsuario.save();
+
+    res.status(201).json({ message: 'Usuario registrado correctamente' });
+  } catch (err) {
+    console.log('ERROR:', err);
+    res.status(500).json({ message: 'Error al registrar usuario', error: err });
+  }
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

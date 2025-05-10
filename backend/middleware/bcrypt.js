@@ -1,9 +1,7 @@
-import { getData } from '../../frontend/pages/register/register.js';
 import bcrypt from "bcrypt";
 const saltRounds = 10;
 
-export async function hashPassword() {
-  const { password } = getData();
+export async function hashPassword(password) {
 
   try {
     const salt = await bcrypt.genSalt(saltRounds);
